@@ -1,5 +1,5 @@
 {
   "$schema": "https://dev.wix.com/wix-cli/schemas/dashboard-page.json",
   "id": "850bd644-793a-4f9a-bba8-e56755261029",
-  "title": "discount-test"
+  "title": "my-discount-page"
 }

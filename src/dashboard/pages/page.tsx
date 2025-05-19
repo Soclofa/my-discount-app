@@ -1,55 +1,90 @@
-import React, { type FC } from 'react';
-import { dashboard } from '@wix/dashboard';
+import React, { type FC } from "react";
+import { dashboard } from "@wix/dashboard";
 import {
   Button,
-  EmptyState,
-  Image,
+  Box,
+  Card,
+  Divider,
+  Heading,
+  Text,
   Page,
-  TextButton,
   WixDesignSystemProvider,
-} from '@wix/design-system';
-import '@wix/design-system/styles.global.css';
-import * as Icons from '@wix/wix-ui-icons-common';
-import wixLogo from './wix_logo.svg';
+} from "@wix/design-system";
+import "@wix/design-system/styles.global.css";
+import * as Icons from "@wix/wix-ui-icons-common";
 
 const Index: FC = () => {
   return (
     <WixDesignSystemProvider features={{ newColorsBranding: true }}>
       <Page>
         <Page.Header
-          title="Dashboard Page"
-          subtitle="Add management capabilities to your app."
+          title="Discount Most Expensive Product"
+          subtitle="Automatically identify and discount your highest-priced items"
           actionsBar={
             <Button
               onClick={() => {
-                dashboard.showToast({
-                  message: 'Your first toast message!',
+                // Navigate to products page
+                dashboard.navigate({
+                  pageId: "0845ada2-467f-4cab-ba40-2f07c812343d",
                 });
               }}
-              prefixIcon={<Icons.GetStarted />}
             >
-              Show a toast
+              Go to Products
             </Button>
           }
         />
         <Page.Content>
-          <EmptyState
-            image={
-              <Image fit="contain" height="100px" src={wixLogo} transparent />
-            }
-            title="Start editing this dashboard page"
-            subtitle="Learn how to work with dashboard pages and how to add functionality to them using Wix APIs."
-            theme="page"
-          >
-            <TextButton
-              as="a"
-              href="https://dev.wix.com/docs/build-apps/develop-your-app/frameworks/wix-cli/supported-extensions/dashboard-extensions/dashboard-pages/add-dashboard-page-extensions-with-the-cli#add-dashboard-page-extensions-with-the-cli"
-              target="_blank"
-              prefixIcon={<Icons.ExternalLink />}
-            >
-              Dashboard pages documentation
-            </TextButton>
-          </EmptyState>
+          <Card>
+            <Card.Header title="How to Use This App" />
+            <Card.Divider />
+            <Card.Content>
+              <Box direction="vertical" gap="24px" padding="20px">
+                <Box direction="vertical" gap="12px">
+                  <Heading>
+                    <Box align="left" verticalAlign="middle" gap="8px">
+                      <span>1. View Your Top Product</span>
+                    </Box>
+                  </Heading>
+                  <Text size="medium">
+                    Navigate to the Products section in your dashboard. The
+                    plugin will automatically display your highest-priced
+                    product that doesn't already have a discount applied.
+                  </Text>
+                </Box>
+
+                <Divider />
+
+                <Box direction="vertical" gap="12px">
+                  <Heading>
+                    <Box align="left" verticalAlign="middle" gap="8px">
+                      <span>2. Apply a Discount</span>
+                    </Box>
+                  </Heading>
+                  <Text size="medium">
+                    Click the "Add a discount" button to navigate to the
+                    discount page. You can choose between a percentage discount
+                    (e.g., 10%) or a fixed amount discount (e.g., ₪50).
+                  </Text>
+                </Box>
+
+                <Divider />
+
+                <Box direction="vertical" gap="12px">
+                  <Heading>
+                    <Box align="left" verticalAlign="middle" gap="8px">
+                      <span>3. See the Results</span>
+                    </Box>
+                  </Heading>
+                  <Text size="medium">
+                    After applying a discount, redirect back to the Products
+                    page. The plugin will update to show the next highest-priced
+                    product without a discount. Check your product catalog to
+                    see the discounted item.
+                  </Text>
+                </Box>
+              </Box>
+            </Card.Content>
+          </Card>
         </Page.Content>
       </Page>
     </WixDesignSystemProvider>

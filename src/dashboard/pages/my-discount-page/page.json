@@ -1,0 +1,8 @@
+{
+  "$schema": "https://dev.wix.com/wix-cli/schemas/dashboard-page.json",
+  "id": "825aaf6c-1798-4765-9872-8d94e81d80eb",
+  "title": "my-discount-page",
+  "sidebar": {
+    "disabled": false
+  }
+}

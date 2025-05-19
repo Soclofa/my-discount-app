@@ -1,0 +1,6 @@
+{
+  "$schema": "https://dev.wix.com/wix-cli/schemas/dashboard-plugin.json",
+  "id": "68f54de7-3cbc-4d3c-ad04-971de662ee05",
+  "title": "my-discount-plugin",
+  "extends": "3ca518a6-8ae7-45aa-8cb9-afb3da945081"
+}
